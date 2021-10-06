@@ -9,11 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.USTHWeather">
-<!--        https://stackoverflow.com/questions/33855518/could-not-identify-launch-activity-default-activity-not-found-->
         <activity
             android:name=".WeatherActivity"
-            android:label="USTHWeather"
-            android:theme="@style/Theme.USTHWeather.NoActionBar">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

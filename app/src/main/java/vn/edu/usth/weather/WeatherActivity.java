@@ -13,11 +13,11 @@ public class WeatherActivity extends AppCompatActivity {
     }
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        Log.i(TAG, "onCreate()");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
         ForecastFragment firstFragment = new ForecastFragment();
         getSupportFragmentManager().beginTransaction().add(R.id.container, firstFragment).commit();
+        Log.i(TAG, "onCreate()");
     }
     @Override
     public void onStart(){
