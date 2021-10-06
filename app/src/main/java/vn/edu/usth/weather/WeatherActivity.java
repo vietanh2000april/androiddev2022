@@ -8,11 +8,16 @@ import android.util.Log;
 
 public class WeatherActivity extends AppCompatActivity {
     private static final String TAG = "WeatherActivity";
+    public WeatherActivity(){
+        super(R.layout.activity_weather);
+    }
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        Log.i(TAG, "onCreate()");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
-        Log.i(TAG, "onCreate()");
+        ForecastFragment firstFragment = new ForecastFragment();
+        getSupportFragmentManager().beginTransaction().add(R.id.container, firstFragment).commit();
     }
     @Override
     public void onStart(){
