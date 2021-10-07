@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/fragment_forecast"
     android:padding="10dp"
     tools:context=".ForecastFragment"
     android:orientation="vertical">
