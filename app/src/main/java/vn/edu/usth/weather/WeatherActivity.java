@@ -16,10 +16,10 @@ public class WeatherActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
 
-        ForecastFragment fragment_forecast = new ForecastFragment();
-        getSupportFragmentManager().beginTransaction().add(R.id.activity_weather, fragment_forecast).commit();
-        WeatherFragment fragment_weather = new WeatherFragment();
-        getSupportFragmentManager().beginTransaction().add(R.id.activity_weather, fragment_weather).commit();
+
+////        add fragment to main activity using code
+//        ForecastFragment fragment_forecast = new ForecastFragment();
+//        getSupportFragmentManager().beginTransaction().add(R.id.activity_weather, fragment_forecast).commit();
         Log.i(TAG, "onCreate()");
     }
     @Override
