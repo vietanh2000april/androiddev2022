@@ -15,7 +15,9 @@ public class WeatherActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
-
+//        why fragment does not show on activ weather??
+        WeatherAndForecastFragment wff = new WeatherAndForecastFragment();
+        getSupportFragmentManager().beginTransaction().add(R.id.activity_weather, wff).commit();
 
 ////        add fragment to main activity using code
 //        ForecastFragment fragment_forecast = new ForecastFragment();

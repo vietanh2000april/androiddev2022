@@ -1,5 +1,6 @@
 package vn.edu.usth.weather;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,10 +11,10 @@ import android.view.ViewGroup;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link WeatherForecastFragment#newInstance} factory method to
+ * Use the {@link WeatherAndForecastFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class WeatherForecastFragment extends Fragment {
+public class WeatherAndForecastFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +25,7 @@ public class WeatherForecastFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public WeatherForecastFragment() {
+    public WeatherAndForecastFragment() {
         // Required empty public constructor
     }
 
@@ -37,8 +38,8 @@ public class WeatherForecastFragment extends Fragment {
      * @return A new instance of fragment WeatherForecastFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static WeatherForecastFragment newInstance(String param1, String param2) {
-        WeatherForecastFragment fragment = new WeatherForecastFragment();
+    public static WeatherAndForecastFragment newInstance(String param1, String param2) {
+        WeatherAndForecastFragment fragment = new WeatherAndForecastFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -59,6 +60,10 @@ public class WeatherForecastFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_weather_forecast, container, false);
+//        return inflater.inflate(R.layout.fragment_weather_forecast, container, false);
+        View v = inflater.inflate(R.layout.fragment_weather_and_forecast, container, false);
+        int light_green = Color.parseColor("#acdfa4");
+        v.setBackgroundColor(light_green);
+        return v;
     }
 }
