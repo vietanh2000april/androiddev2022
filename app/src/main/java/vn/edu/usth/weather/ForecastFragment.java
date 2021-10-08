@@ -61,8 +61,8 @@ public class ForecastFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_forecast, container, false);
-        int grey_dark_mode = Color.parseColor("#121212");
-        v.setBackgroundColor(grey_dark_mode);
+//        int bg_color = Color.parseColor("#fff");
+        v.setBackgroundColor(Color.WHITE);
         return v;
     }
 }
