@@ -16,3 +16,4 @@ Features
 ===
 - Tab Layout
 - Pagination
+- Boot sound effect (https://www.youtube.com/watch?v=vJ08fwaLXwg)
