@@ -47,7 +47,6 @@ public class WeatherActivity extends AppCompatActivity {
                 }
             }
         }).attach();
-        mTabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         Log.i(TAG, "onCreate()");
     }
     @Override
