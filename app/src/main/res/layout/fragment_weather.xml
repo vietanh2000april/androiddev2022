@@ -3,22 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/light_blue"
     android:id="@+id/fragment_weather"
-    android:padding="10dp"
     tools:context=".WeatherFragment"
     android:orientation="vertical">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="12'C Cloudy"
-        android:background="@color/light_blue"/>
+        android:layout_height="wrap_content"
+        android:text="12'C Cloudy" />
 
     <ImageView
-        android:layout_width="500dp"
-        android:layout_height="600dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:src="@drawable/rain"/>
+        android:src="@drawable/rain" />
 
 </RelativeLayout>

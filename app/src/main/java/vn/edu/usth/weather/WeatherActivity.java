@@ -5,12 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
+import java.util.Locale;
 
 public class WeatherActivity extends AppCompatActivity {
     private static final String TAG = "WeatherActivity";
@@ -20,9 +25,9 @@ public class WeatherActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setApplicationLocale("vn");
         setContentView(R.layout.activity_weather);
-//        WeatherAndForecastFragment wff = new WeatherAndForecastFragment();
-//        getSupportFragmentManager().beginTransaction().add(R.id.activity_weather, wff).commit();
+
 
         FragmentManager fm = getSupportFragmentManager();
         mViewPager2 = findViewById(R.id.view_pager_2);
@@ -49,6 +54,20 @@ public class WeatherActivity extends AppCompatActivity {
         }).attach();
         Log.i(TAG, "onCreate()");
     }
+
+
+    private void setApplicationLocale(String locale) {
+        Resources resources = getResources();
+        DisplayMetrics dm = resources.getDisplayMetrics();
+        Configuration config = resources.getConfiguration();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            config.setLocale(new Locale(locale.toLowerCase()));
+        } else {
+            config.locale = new Locale(locale.toLowerCase());
+        }
+        resources.updateConfiguration(config, dm);
+    }
+
     @Override
     public void onStart(){
         super.onStart();
