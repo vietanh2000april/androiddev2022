@@ -7,6 +7,9 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -15,6 +18,7 @@ import android.util.Log;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
+import java.net.URL;
 import java.util.Locale;
 
 public class WeatherActivity extends AppCompatActivity {
@@ -27,6 +31,18 @@ public class WeatherActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setApplicationLocale("vn");
         setContentView(R.layout.activity_weather);
+
+
+        MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.thunder);
+        mediaPlayer.start();
+
+
+//        String url = "";
+//        MediaPlayer mediaPlayer = new MediaPlayer();
+//        mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+//        mediaPlayer.setDataSource(getApplicationContext(), Uri.parse(url));
+//        mediaPlayer.prepare();
+//        mediaPlayer.start();
 
 
         FragmentManager fm = getSupportFragmentManager();
