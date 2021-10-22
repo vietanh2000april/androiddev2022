@@ -10,7 +10,7 @@ Student Info
 
 Screenshots
 ===
-![image](https://user-images.githubusercontent.com/47298653/138396393-9dff994b-39ed-4ef8-9375-0b6acc8ed58d.png)
+![image](https://user-images.githubusercontent.com/47298653/138415305-6b30129e-baa1-4f44-8cfa-a7f9084d165f.png)
 
 Features
 ===
