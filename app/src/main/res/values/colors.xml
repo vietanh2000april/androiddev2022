@@ -9,4 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="cyan_blue">#315399</color>
     <color name="light_blue">#add8e6</color>
+    <color name="light_blue_shade600">#FF039BE5</color>
+    <color name="light_blue_shade700">#FF0288D1</color>
+    <color name="light_blue_shade800">#FF0277BD</color>
+    <color name="light_blue_shade900">#FF01579B</color>
 </resources>

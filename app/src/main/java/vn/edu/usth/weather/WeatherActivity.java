@@ -2,6 +2,7 @@ package vn.edu.usth.weather;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -36,6 +37,9 @@ public class WeatherActivity extends AppCompatActivity {
         MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.thunder);
         mediaPlayer.start();
 
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
 //        String url = "";
 //        MediaPlayer mediaPlayer = new MediaPlayer();
