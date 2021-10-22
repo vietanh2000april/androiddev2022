@@ -10,10 +10,12 @@ Student Info
 
 Screenshots
 ===
-![image](https://user-images.githubusercontent.com/47298653/138418531-36152040-76fc-4072-a2b3-8bd68b89a8aa.png)
+![image](https://user-images.githubusercontent.com/47298653/138419412-bccccdf9-c38e-49c4-8432-0e4fa9f32580.png)
 
 Features
 ===
-- Tab Layout
+- Tab layout
 - Pagination
 - Boot sound effect (https://www.youtube.com/watch?v=vJ08fwaLXwg)
+- Options menu
+- Refresh button (non-active)
