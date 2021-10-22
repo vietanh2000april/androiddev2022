@@ -25,4 +25,7 @@
     <string name="friday_weather">Friday</string>
     <string name="saturday_weather">Saturday</string>
     <string name="sunday_weather">Sunday</string>
+    <string name="hanoi">HANOI</string>
+    <string name="paris">PARIS</string>
+    <string name="toulouse">TOULOUSE</string>
 </resources>
