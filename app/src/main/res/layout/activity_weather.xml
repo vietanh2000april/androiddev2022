@@ -17,6 +17,15 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/light_blue_shade800"/>
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:min="0"
+            android:max="10"
+
+            />
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/sliding_tabs"
             android:background="@android:color/white"

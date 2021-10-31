@@ -8,7 +8,9 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
 import android.media.MediaPlayer;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -19,6 +21,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
@@ -31,6 +34,9 @@ public class WeatherActivity extends AppCompatActivity {
     private TabLayout mTabLayout;
     private ViewPagerAdapter mViewPagerAdapter;
     private ViewPager2 mViewPager2;
+    ProgressBar progressBar;
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,6 +83,12 @@ public class WeatherActivity extends AppCompatActivity {
                 }
             }
         }).attach();
+
+
+        progressBar = findViewById(R.id.progressBar);
+
+
+
         Log.i(TAG, "onCreate()");
     }
 
@@ -121,7 +133,7 @@ public class WeatherActivity extends AppCompatActivity {
         }
     }
 
-
+        // thread and handler approach
     public void refreshButtonClicked(MenuItem item) {
         final Handler handler = new Handler(Looper.getMainLooper()) {
             @Override
@@ -155,5 +167,47 @@ public class WeatherActivity extends AppCompatActivity {
         Thread thread = new Thread(runnable);
         thread.start();
     }
+
+
+    public void refresh(MenuItem item) {
+        new Refresh().execute();
+    }
+
+    class Refresh extends AsyncTask<String, Integer, Bitmap> {
+
+        @Override
+        protected void onPreExecute() {
+
+        }
+        @Override
+        protected Bitmap doInBackground(String... params) {
+            // This is where the worker thread's code is executed
+            // params are passed from the execute() method call
+            for (int i=0; i<10; i++) {
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+//                 running progress bar
+                publishProgress(i);
+            }
+            return null;
+        }
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            // This method is called in the main thread, so it's possible
+            // to update UI to reflect the worker thread progress here.
+            // In a network access task, this should update a progress bar
+            // to reflect how many percent of data has been retrieved
+            progressBar.setProgress(values[0] + 1);
+        }
+        @Override
+        protected void onPostExecute(Bitmap bitmap) {
+            // This method is called in the main thread. After #doInBackground returns
+            // the bitmap data, we simply set it to an ImageView using ImageView.setImageBitmap()
+            Toast.makeText(WeatherActivity.this, "Successfully refreshed!", Toast.LENGTH_SHORT).show();
+        }
+    };
 
 }
