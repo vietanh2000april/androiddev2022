@@ -20,4 +20,5 @@ Features
 - Pagination
 - Boot sound effect (https://www.youtube.com/watch?v=vJ08fwaLXwg)
 - Options menu
-- Refresh button (non-active)
+- Thread and Handler
+- Refresh button: AsyncTask with progress bar
