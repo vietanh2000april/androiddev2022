@@ -11,10 +11,15 @@ import android.content.res.Resources;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -39,6 +44,7 @@ public class WeatherActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
 //        String url = "";
 //        MediaPlayer mediaPlayer = new MediaPlayer();
@@ -116,35 +122,38 @@ public class WeatherActivity extends AppCompatActivity {
     }
 
 
-    @Override
-    public void onStart(){
-        super.onStart();
-        Log.i(TAG, "onStart()");
-    };
-    @Override
-    public void onRestart(){
-        super.onRestart();
-        Log.i(TAG, "onRestart()");
-    };
-    @Override
-    public void onResume(){
-        super.onResume();
-        Log.i(TAG, "onResume()");
-    };
-    @Override
-    public void onPause(){
-        super.onPause();
-        Log.i(TAG, "onPause()");
-    };
-    @Override
-    public void onStop(){
-        super.onStop();
-        Log.i(TAG, "onStop()");
-    };
-    @Override
-    public void onDestroy(){
-        super.onDestroy();
-        Log.i(TAG, "onDestroy()");
-    };
+    public void refreshButtonClicked(MenuItem item) {
+        final Handler handler = new Handler(Looper.getMainLooper()) {
+            @Override
+            public void handleMessage(Message msg) {
+                String content = msg.getData().getString("server_response");
+                Toast.makeText(WeatherActivity.this, content, Toast.LENGTH_SHORT).show();
+            }
+        };
+
+
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(5000);
+                }
+                catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                Bundle bundle = new Bundle();
+                bundle.putString("server_response", "some sample json here");
+
+                Message msg = new Message();
+                msg.setData(bundle);
+                handler.sendMessage(msg);
+
+            }
+        };
+
+        Thread thread = new Thread(runnable);
+        thread.start();
+    }
 
 }

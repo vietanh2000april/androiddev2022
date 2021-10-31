@@ -4,9 +4,10 @@
     tools:context=".WeatherActivity">
     <item
         android:id="@+id/action_favorite"
-        android:icon="@drawable/refresh_30"
+        android:icon="@drawable/refresh_24_black"
         android:title="@string/action_refresh"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom"
+        android:onClick="refreshButtonClicked"/>
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
